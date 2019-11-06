@@ -1,0 +1,14 @@
+Generic GPIO bit-banged PWM driver
+
+Required properties:
+  - compatible: should be "pwm-gpio"
+  - pwm-gpio: gpio describing the used gpio, see the gpio
+    bindings for the used gpio driver.
+
+Example:
+#include <dt-bindings/gpio/gpio.h>
+
+	pwm: pwm@0 {
+		compatible = "pwm-gpio";
+		pwm-gpio = <&pio 7 1 GPIO_ACTIVE_LOW>;
+	};
